@@ -1,0 +1,75 @@
+<app-main-header></app-main-header>
+<app-custom-fab
+    [routerLink]="'/service-order/' + id"
+    routerDirection="forward"
+></app-custom-fab>
+<ion-content>
+    <div class="photo__container">
+        <ion-slides [pager]="true">
+           <ion-slide
+            *ngFor="let item of salon.gallery"
+            [ngStyle]="{
+                backgroundImage: 'url(http://beauty.bfgroup.kz/upload_dir/' +item + ')'
+            }"
+           ></ion-slide>
+        </ion-slides>
+        <div class="salon__content">
+            <h5 class="salon__name">
+                {{salon.name}}
+            </h5>
+            <p class="salon__desc" [innerHTML]="salon.bio">
+            </p>
+            <hr>
+            <ul>
+                <li>
+                    <div class="icon__container"
+                         [ngStyle]="{
+                            backgroundImage: 'url(../../assets/imgs/location_icon.png)'
+                        }">
+                    </div>
+                    <p>{{ salon.address }}</p>
+                </li>
+                <li (click)="callPhone()">
+                    <div class="icon__container"
+                         [ngStyle]="{
+                            backgroundImage: 'url(../../assets/imgs/call_icon.png)'
+                        }">
+                    </div>
+                    <p>{{ salon.phone }}</p>
+                </li>
+                <li>
+                    <div class="icon__container"
+                         [ngStyle]="{
+                            backgroundImage: 'url(../../assets/imgs/envelope_icon.png)'
+                        }">
+                    </div>
+                    <p>{{ salon.mail }}</p>
+                </li>
+            </ul>
+            <hr>
+            <div class="work__graphic">График работы</div>
+            <app-accordion
+                    name="{{workTime.dayName}}"
+                    time="{{workTime.workTime}}"
+                    [days]="workTime.days"
+            ></app-accordion>
+            <div class="work__graphic">Услуги</div>
+            <app-accordion-service
+                    *ngFor="let item of categories"
+                    [imageUrl]="item.icon"
+                    [serviceName]="item.name"
+                    [servicesNames]="item.prices"
+            ></app-accordion-service>
+            <div class="work__graphic" style="margin-top: 2.5vh;">Мастера</div>
+            <app-master-item
+                [routerLink]="'/master-page/' + item.id"
+                routerDirection="forward"
+                *ngFor="let item of masters"
+                [speciality]="item.speciality"
+                [imageUrl]="item.imageUrl"
+                [name]="item.name"
+            ></app-master-item>
+            <div class="empty" style="height: 5vh;"></div>
+        </div>
+    </div>
+</ion-content>

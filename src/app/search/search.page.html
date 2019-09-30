@@ -1,0 +1,41 @@
+<app-main-header></app-main-header>
+<ion-content>
+    <div class="main-header__search">
+        <ion-input placeholder="Поиск" [(ngModel)]="searchWord" (ionChange)="makeFilter()">
+            <ion-icon name="search"></ion-icon>
+        </ion-input>
+    </div>
+    <div class="search__content">
+        <ion-segment [(ngModel)]="chosenSegment" (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="salons" checked>
+                <ion-label>Салоны</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="masters">
+                <ion-label>Мастера</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    <ng-container [ngSwitch]="chosenSegment">
+        <ng-container *ngSwitchCase="'salons'">
+            <app-salon-item
+                    *ngFor="let item of filteredSalons"
+                    [routerLink]="'/salon-page/' + item.id" routerDirection="forward"
+                    [salonName]="item.name"
+                    [salonImage]="item.gallery[0]"
+                    [salonDescription]="item.bio"></app-salon-item>
+        </ng-container>
+        <ng-container *ngSwitchCase="'masters'">
+            <div style="width: 90%; margin: auto;">
+                <app-master-item
+                        [routerLink]="'/master-page/' + item.id"
+                        routerDirection="forward"
+                        *ngFor="let item of filteredMasters"
+                        [speciality]="item.profession"
+                        [imageUrl]="item.img"
+                        [name]="item.name"
+                ></app-master-item>
+            </div>
+        </ng-container>
+    </ng-container>
+
+</ion-content>

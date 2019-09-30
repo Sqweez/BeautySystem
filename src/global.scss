@@ -1,0 +1,33 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+@font-face {
+  font-family: "Futura PT Book";
+  src: url("assets/fonts/futurapt_book.TTF") ;
+}
+
+@font-face {
+  font-family: "Futura PT Medium";
+  src: url("assets/fonts/futurapt_medium.OTF");
+}
+
+* {
+  font-family: "Futura PT Book", sans-serif;
+}
+
+.toolbar-background {
+  border: none;
+}
+
+button {
+  outline: none;
+}

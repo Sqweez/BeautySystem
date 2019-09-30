@@ -1,0 +1,23 @@
+.news__salons {
+  width: 90%;
+  margin: auto;
+}
+
+.salon__img {
+  height: 18vh;
+  box-shadow: 4.915px 3.441px 2.76px 0.24px rgba(0, 0, 0, 0.29);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.news__salons h4 {
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: -1.5vh;
+}
+
+.news__salons p {
+  color: #676767;
+}

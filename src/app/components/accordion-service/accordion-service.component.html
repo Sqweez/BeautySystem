@@ -1,0 +1,21 @@
+<div (click)="toggleAccordion()" class="container__">
+    <div
+    (click)="toggleAccordion()"
+        class="iconImage"
+        [ngStyle]="{
+            backgroundImage: 'url('+ imageUrl +')'
+        }"
+    ></div>
+    <span class="workTime" (click)="toggleAccordion()">{{ serviceName }}</span>
+    <div class="arrow" [ngClass]="this.isMenuOpen ? 'dropleft' : ''">
+        <ion-icon name="arrow-dropdown"></ion-icon>
+    </div>
+</div>
+<div
+        [ngClass]="this.isMenuOpen ? 'active' : 'inactive'">
+    <div class="container__item" *ngFor="let item of servicesNames">
+       <div class="circle"></div>
+        <div class="serviceName" style="width: 70%;">{{item.name}}</div>
+        <div class="priceTime" style="width: 23%;">{{item.cost}} тг., {{item.time}} мин.</div>
+    </div>
+</div>

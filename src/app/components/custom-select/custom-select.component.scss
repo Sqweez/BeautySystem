@@ -1,0 +1,93 @@
+li, ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.select__container {
+  position: relative;
+}
+
+.custom-select {
+  width: 100%;
+  outline: none;
+  border-radius: 25px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: none;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  padding: 2vh;
+  color: #bdbdbd;
+  box-shadow: inset 0px 3px 7px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 2vh;
+}
+
+ul {
+  margin-top: 2vh;
+}
+
+.content {
+  width: 100%;
+  background-color: #f4f4f4;
+  z-index: 1;
+  height: 0;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  transition: transform .3s ease;
+  transform: translateY(-30vh);
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+
+.content.active {
+  margin-top: -5vh;
+  height: auto;
+  margin-bottom: 2vh;
+  transform: translateY(1vh);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+li.active {
+  height: auto;
+  overflow: auto;
+}
+
+
+.content > ul {
+  margin-top: 3vh;
+}
+.content ul > li {
+  padding: 1.3vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;;
+}
+.content li:last-child {
+  margin-bottom: 2vh;
+}
+
+.content li span {
+  color: #a6a6a6;
+  margin-left: auto;
+}
+
+ion-icon {
+  transition: all .3s;
+  color: #bdbdbd!important;
+}
+
+ion-icon.rotate {
+  transform: rotate(90deg);
+}
+
+.color-black {
+  color: #000;
+}

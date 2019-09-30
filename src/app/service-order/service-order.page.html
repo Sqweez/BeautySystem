@@ -1,0 +1,58 @@
+<app-main-header></app-main-header>
+<ion-content no-padding>
+    <div class="container">
+        <div class="order__container">
+            <div class="order__image"></div>
+            <div class="order__heading">подать заявку</div>
+            <ul>
+                <app-custom-select
+                        [customPlaceholder]="'Выбор услуги'"
+                        [services]="services"
+                        (chosen)="onChooseService($event)"
+                        (select)="onSelectClicked()"
+                        >
+                </app-custom-select>
+                <app-custom-select *ngIf="order.service"
+                        [customPlaceholder]="customPlaceholder"
+                        [services]="masters"
+                        (chosen)="onChooseMaster($event)"
+                >
+                </app-custom-select>
+                <li class="input__container" *ngIf="order.service && order.master">
+                    <span>Дата</span>
+                    <ion-datetime
+                            [min]="currentDate"
+                            [cancelText]="'Отмена'"
+                            [doneText]="'ОК'"
+                            displayFormat="DD.MM.YYYY"
+                            (ionChange)="filterDates()"
+                            [(ngModel)]="order.date">
+                    </ion-datetime>
+                    <ion-icon name="calendar"></ion-icon>
+                </li>
+                <li class="input__container" *ngIf="order.service && order.master && order.date && order.time">
+                    <span>Выбранное время:</span> <b style="float: right;">{{order.time}}</b>
+                </li>
+                <li class="input__container" *ngIf="order.service && order.master && order.date">
+                    <h3 style="text-align: center" *ngIf="dates.length == 0">Сожалеем, но на данную дату запись невозможна</h3>
+                    <ion-grid>
+                    <ion-row
+                            align-items-center
+                            justify-content-around
+                            *ngIf="dates.length > 0">
+                            <ion-col
+                                    [size]="'3'"
+                                    class="custom-time-picker"
+                                    *ngFor="let item of dates"
+                                    (click)="chooseTime(item)"
+                            >{{item}}</ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </li>
+                <li class="input__container" *ngIf="order.service && order.master && order.date">
+                    <button id="makeOrder" (click)="makeRecord()">ЗАПИСАТЬСЯ</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</ion-content>

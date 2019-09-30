@@ -1,0 +1,13 @@
+<div class="news__salons">
+    <div
+            [ngStyle]="
+                {
+                    backgroundImage: 'url(http://beauty.bfgroup.kz/upload_dir/' + salonImage + ')'
+                }"
+            class="salon__img">
+    </div>
+    <div class="salon__desc">
+        <h4>{{ salonName }}</h4>
+        <p [innerHTML]="salonDescription"></p>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<app-main-header></app-main-header>
+<ion-content>
+    <div class="master__container">
+        <div
+                class="master__photo"
+                [ngStyle]="
+            {
+                backgroundImage: 'url(' + master.img + ')'
+            }"
+        ></div>
+        <div class="master__name">{{ master.name }}</div>
+        <div class="master__speciality">{{ master.profession }}</div>
+    </div>
+    <div class="container">
+        <div class="master__bio" [innerHTML]="master.bio">
+        </div>
+        <div class="work__graphic">Услуги</div>
+        <div class="container__item" *ngFor="let item of master.services">
+            <div class="circle circle__active"></div>
+            <div class="serviceName">{{ item.name }}</div>
+            <div class="priceTime">{{ item.cost }} тг., {{ item.time }} мин.</div>
+        </div>
+
+    </div>
+</ion-content>

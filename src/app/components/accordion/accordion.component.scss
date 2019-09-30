@@ -1,0 +1,50 @@
+.container {
+  font-family: "Futura PT Book";
+  margin-top: 2vh;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}
+
+.dayName {
+  color: #ffffff;
+  margin-right: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient( 90deg, rgb(178,0,0) 0%, rgb(255,0,0) 100%);;
+}
+
+.arrow {
+  margin-left: auto;
+  transition: all .3s ease;
+}
+
+.dropleft {
+  transform: rotate(90deg);
+}
+
+.inactive {
+  touch-action: none;
+  height: 0;
+  opacity: 0;
+  transition: all .3s ease;
+  z-index: -1;
+  .container {
+    height: 0;
+    touch-action: none;
+  }
+}
+
+.active {
+  height: auto;
+  transition: all .3s ease;
+  opacity: 1;
+}
+
+.dayName__accordion {
+  background: #676767!important;
+}
+

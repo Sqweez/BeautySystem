@@ -1,0 +1,7 @@
+{
+  "name": "BeautySystem",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,86 @@
+.swiper-pagination {
+  opacity: 1!important;
+}
+
+.photo__container {
+  width: 100%;
+  height: 28vh;
+  background-color: #fff;
+}
+
+.photo__container ion-slide {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 4vh;
+}
+
+ion-slides {
+  width: 100%;
+  height: 100%;
+}
+
+ion-slides {
+  opacity: 1!important;
+  --opacity: 1!important;
+  --bullet-background: #ffffff;
+  --bullet-background-active: #ff0000;
+}
+
+.salon__content {
+  width: 90%;
+  margin: auto;
+}
+
+.salon__name {
+  font-weight: 600;
+}
+
+.salon__content hr {
+  background-color: #e1e1e1;
+}
+
+p {
+  color: #676767;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+.salon__content li {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+
+.salon__content li p {
+  font-size: 18px;
+  margin: 1vh 3vw!important;
+}
+
+.icon__container {
+  width: 25px;
+  height: 25px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.work__graphic {
+  font-size: 16px;
+  font-weight: 600;
+  padding: .7vh;
+  transform: scale(1.1);
+  background-color: #f2f2f2;
+  text-align: center;
+}
+

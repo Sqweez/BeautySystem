@@ -1,0 +1,73 @@
+.iconImage {
+  height: 25px;
+  width: 25px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 2vw;
+}
+
+.container__ {
+  z-index: 999;
+  font-family: "Futura PT Book";
+  margin-top: 2vh;
+  display: flex;
+  align-items: center;
+  font-size: 18px !important;
+  font-weight: 500;
+}
+
+.workTime {
+  font-size: 18px;
+}
+
+.arrow {
+  margin-left: auto;
+  transition: all .3s ease;
+}
+
+.dropleft {
+  transform: rotate(90deg);
+}
+
+.inactive {
+  max-height: 0;
+  opacity: 0;
+  transition: all .3s ease;
+  height: 0;
+
+  .container__item {
+    display: none;
+  }
+}
+
+.active {
+  height: auto;
+  transition: all .3s ease;
+  opacity: 1;
+}
+
+.dayName__accordion {
+  background: #676767 !important;
+}
+
+.container__item {
+  display: flex;
+  padding: 1vh 0;
+  align-items: center;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  background-color: #ff0000;
+  margin-right: 2vw;
+}
+
+.priceTime {
+  margin-left: auto;
+}

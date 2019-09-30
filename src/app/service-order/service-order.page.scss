@@ -1,0 +1,171 @@
+* {
+  font-family: "Futura PT Book";
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.order__container {
+  margin: 6vh auto 3vh;
+}
+
+.order__image {
+  height: 14vh;
+  width: 14vh;
+  background: url("../../assets/imgs/contract.png") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  margin: 0 auto 2vh;
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  -o-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.order__heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.select__container {
+  position: relative;
+}
+
+.custom-select {
+  width: 100%;
+  outline: none;
+  border-radius: 25px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: none;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  padding: 2vh;
+  color: #bdbdbd;
+  box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 2vh;
+}
+
+ul {
+  margin-top: 2vh;
+}
+
+.content {
+  top: 3vh;
+  width: 100%;
+  background-color: #f4f4f4;
+  z-index: 1;
+  position: absolute;
+  height: 0;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  -ms-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+  overflow: hidden;
+}
+
+
+.content.active {
+  height: auto;
+}
+
+.content > ul {
+  margin-top: 5vh;
+}
+.content ul > li {
+  padding: 1.3vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;;
+}
+.content li:last-child {
+  margin-bottom: 2vh;
+}
+
+.content li span {
+  color: #a6a6a6;
+  margin-left: auto;
+}
+
+.input__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 3vh;
+  
+  button {
+    width: 100%;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    height: 7vh;
+    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+    background: linear-gradient( 15deg, rgb(178,0,0) 0%, rgb(255,0,0) 100%);
+    color: #fff;
+    font-size: 17px;
+
+  }
+
+  button:active {
+    box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(15deg, #ee0000 0%, red 100%);
+  }
+
+  span {
+    margin-left: 5vw;
+    color: #bdbdbd;
+    padding: 0;
+  }
+
+  ion-datetime {
+    border: none;
+    width: 60%;
+    border-radius: 25px;
+    box-shadow: inset 0px 3px 7px rgba(0, 0, 0, 0.3);
+    background-color: #f4f4f4;
+    position: relative;
+  }
+
+  ion-icon {
+    color: #bdbdbd;
+    position: absolute;
+    z-index: 2;
+    right: 3.6vw;
+  }
+}
+
+.custom-time-picker {
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(15deg, #b20000 0%, red 100%);
+  color: #fff;
+  border-radius: 20px;
+  margin: 8px;
+  box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+}
+
+.custom-time-picker:active {
+  box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(15deg, #ee0000 0%, red 100%);
+}
+
+

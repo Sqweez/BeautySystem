@@ -1,0 +1,22 @@
+<li [ngClass]="isVisible ? 'active' : ''">
+    <div class="select__container">
+        <div
+                class="custom-select"
+                (click)="toggleClass()"
+                [ngClass]="isChoosen ? 'color-black' : ''"
+        >
+            {{customPlaceholder}}
+            <ion-icon
+                    name="arrow-dropdown"
+                    [ngClass]="isVisible ? 'rotate' : ''"></ion-icon>
+        </div>
+        <div class="content" [ngClass]="isVisible ? 'active' : ''">
+            <ul>
+                <li *ngFor="let item of services"
+                    (click)="setValue(item)">
+                    {{item.name}}<span>{{item.desc}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</li>

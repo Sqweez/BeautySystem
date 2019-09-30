@@ -1,0 +1,59 @@
+.header__container {
+  height: 35vh;
+  transform: translateY(-10.6vh);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../../assets/imgs/profile__header.jpg);
+}
+
+.profile_photo {
+  margin: auto;
+  height: 20vh;
+  width: 20vh;
+  border-radius: 100%;
+  transform: translateY(-20vh);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.profile-name {
+  margin-top: -18vh;
+  text-align: center;
+}
+
+.profile-phone {
+  color: #b9b9b9;
+  text-align: center;
+  padding-bottom: 3vh;
+}
+
+.line-divider {
+  height: 1px;
+  margin: auto;
+  width: 60%;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, #e1e1e1));
+}
+
+.orders__container {
+  width: 85%;
+  margin: auto;
+}
+
+.orders__heading {
+  font-size: 17px;
+  margin-bottom: 2vh;
+}
+
+.order__container {
+  color: #9c9c9c;
+  .order__date {
+    text-align: end;
+  }
+  padding-bottom: 1vh;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 1.5vh;
+}

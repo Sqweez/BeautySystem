@@ -1,0 +1,14 @@
+<div (click)="toggleAccordion()" class="container">
+    <div class="dayName" (click)="toggleAccordion()">{{ name }}</div>
+    <span class="workTime" (click)="toggleAccordion()">{{ time }}</span>
+    <div class="arrow" [ngClass]="this.isMenuOpen ? 'dropleft' : ''">
+        <ion-icon name="arrow-dropdown"></ion-icon>
+    </div>
+</div>
+<div
+        [ngClass]="this.isMenuOpen ? 'active' : 'inactive'">
+        <div class="container" *ngFor="let item of days">
+            <div class="dayName dayName__accordion">{{ item.dayName }}</div>
+            <span class="workTime">{{ item.workTime}}</span>
+        </div>
+</div>

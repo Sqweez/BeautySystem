@@ -1,0 +1,45 @@
+<ion-header no-border>
+        <ion-toolbar style="margin-top: 2vh;">
+            <ion-buttons slot="start">
+                <ion-button (click)="navBack()">
+                    <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+            <ion-buttons slot="end">
+                <ion-button (click)='logout()'>
+                    <ion-icon name="exit" slot="icon-only"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+<ion-content no-padding>
+    <div class="header__container"></div>
+    <div class="profile_photo" [ngStyle]="
+        {
+          backgroundImage: 'url(../../assets/imgs/master_2.jpg)'
+        }"></div>
+    <h4 class="profile-name">{{ user.name }}</h4>
+    <p class="profile-phone">{{ user.phone }}</p>
+    <div class="line-divider"></div>
+    <hr>
+    <div class="orders__container">
+        <div class="orders__heading" *ngIf="currentOrderHistory.length > 0">Текущие записи</div>
+        <div class="order__container" *ngFor="let item of currentOrderHistory" style="margin-bottom: 35px;">
+                <div class="order__details">
+                    <b>Мастер</b>: {{ item.masterName }} <br>
+                    <b>Услуга</b>: {{ item.priceName }} <br>
+                    <b>Салон</b>: {{item.salonName}}
+                </div>
+                <div class="order__date">{{ item.dateZapis }}</div>
+            </div>
+        <div class="orders__heading">Прошлые записи</div>
+        <div class="order__container" *ngFor="let item of pastOrderHistory">
+            <div class="order__details">
+                <b>Мастер</b>: {{ item.masterName }} <br>
+                <b>Услуга</b>: {{ item.priceName }} <br>
+                <b>Салон</b>: {{item.salonName}}
+            </div>
+            <div class="order__date">{{ item.dateZapis }}</div>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,48 @@
+<ion-header no-border [@scrollStateHeader]="position">
+    <ion-toolbar style="margin-top: 2vh;">
+        <h3 [@scrollStateHeaderTitle]="position"
+            style="text-align: center; opacity: 0; transform: translateY(-50vh); color: #fff;">BeatySystem</h3>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/profile">
+                <img src="../../assets/imgs/profile__icon.png" alt="" height="16">
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen style="position: relative;" [scrollEvents]="true" (ionScroll)="logScrollStart($event)">
+    <div class="main-header" [ngStyle]="{ backgroundImage: 'url(' + headerImage + ')'}">
+        <div class="main-header__title" [@scrollState]="position">Beauty System</div>
+        <div class="main-header__search">
+            <ion-input placeholder="Поиск" (ionFocus)="navToSearch()">
+                <ion-icon name="search"></ion-icon>
+            </ion-input>
+        </div>
+    </div>
+    <div class="main_content">
+        <h5>Категории</h5>
+        <div class="slides__container">
+            <ion-slides [options]="sliderOptions">
+                <ion-slide [routerLink]="'/categories/' + item.name + '/' + item.id" routerDirection="forward"
+                    *ngFor="let item of categories">
+                    <div class="slide">
+                        <div class="slide_img" [ngStyle]="
+                        {
+                            backgroundImage: 'url(' + item.img + ')'
+                        }">
+
+                        </div>
+                        <div class="slide_text">
+                            {{item.name}}
+                        </div>
+                    </div>
+                </ion-slide>
+            </ion-slides>
+        </div>
+        <h5>Новые салоны</h5>
+        <app-salon-item [routerLink]="'/salon-page/' + item.id" routerDirection="forward" *ngFor="let item of newSalons"
+            [salonName]="item.name" [salonDescription]="item.bio" [salonImage]="item.gallery[0]"></app-salon-item>
+
+
+
+    </div>
+</ion-content>

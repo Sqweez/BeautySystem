@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar (click)="back()">
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="logo__container"></div>
+    <ion-list class="input__container">
+        <ion-item lines="none" *ngIf="registerState && !condition">
+            <ion-input placeholder="Ваше имя" [(ngModel)]="userName"></ion-input>
+        </ion-item>
+        <ion-item lines="none" *ngIf="!condition">
+            <ion-input placeholder="Номер телефона" [(ngModel)]="userPhone" mask="+0(000) 000-00-00"></ion-input>
+        </ion-item>
+        <ion-item lines="none" *ngIf="condition">
+            <ion-input placeholder="Пароль" [(ngModel)]="userPass"></ion-input>
+        </ion-item>
+        <ion-item lines="none" *ngIf="!registerState">
+            <button (click)="makeAuth()">Войти</button>
+        </ion-item>
+        <ion-item lines="none" *ngIf="registerState">
+            <button (click)="register()">Зарегистрироваться</button>
+        </ion-item>
+        <ion-item lines="none" style="margin-top: 10px" *ngIf="!condition">
+            <button (click)="registerState = !registerState">
+                <span *ngIf="!registerState">Регистрация</span>
+                <span *ngIf="registerState">Вход</span>
+            </button>
+        </ion-item>
+    </ion-list>
+</ion-content>

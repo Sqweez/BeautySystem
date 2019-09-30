@@ -1,0 +1,10 @@
+<app-main-header></app-main-header>
+<ion-content>
+    <h3 style="text-align: center">{{categoryName}}</h3>
+    <app-salon-item
+            *ngFor="let item of salons"
+            [routerLink]="'/salon-page/' + item.id" routerDirection="forward"
+            [salonName]="item.name"
+            [salonImage]="item.gallery[0]"
+            [salonDescription]="item.bio"></app-salon-item>
+</ion-content>
