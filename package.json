@@ -46,7 +46,7 @@
     "ionic-input-mask": "^1.0.1",
     "ionic4-mask-directive": "^1.0.2",
     "mask-js": "^2.1.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ngx-mask": "^8.0.6",
     "ngx-mask-ionic": "^1.1.2",
     "rxjs": "~6.5.1",
